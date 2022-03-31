@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koło fortuny</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@100;500;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>KOŁO FORTUNY</h1>
+        <div class="reset" data-reset></div>
+    </header>
+    <div class="wrapper_start " data-wrapper-start>
+        <p>Poziom gry</p>
+        <select class="level" name="level" data-level>
+            <option value="-1">wybierz poziom</option>
+            <option value="easy">ŁATWY</option>
+            <option value="medium">ŚREDNI</option>
+            <option value="difficult">TRUDNY</option>
+        </select>
+        <p>Podaj kwotę gry</p>
+        <input type="number" placeholder="podaj kwotę" id="money" data-money>
+        <button class="button_deposit" data-button-deposit>Wpłać</button>
+        <button class="button_play" data-button-play>GRAJ !!!</button>
+    </div>
+    <div class="wrapper_game game_hide" data-wrapper-game>
+        <section class="win_life_time">
+            <div class="win"> 
+                <div>Wpłaciłeś <span data-deposit-money></span> zł</div>
+                <div data-win-money-container>Grasz o <br><span data-win-money></span> zł</div>
+            </div>
+            <div class="life">
+                <div class="step" data-step>
+                    <img src="images/1.png" alt="">
+                </div>
+                <div class="step" data-step>
+                    <img src="images/2.png" alt="">
+                </div>
+                <div class="step" data-step>
+                    <img src="images/3.png" alt="">
+                </div>
+                <div class="step" data-step>
+                    <img src="images/4.png" alt="">
+                </div>
+                <div class="step" data-step>
+                    <img src="images/5.png" alt="">
+                </div>
+                <div class="step" data-step>
+                    <img src="images/6.png" alt="">
+                </div>
+                <div class="step" data-step>
+                    <img src="images/7.png" alt="">
+                </div>
+                <div class="step" data-step>
+                    <img src="images/8.png" alt="">
+                </div>
+            </div>
+            <div class="time">
+                <div class="timer" data-timer></div>
+            </div>
+        </section>
+        <section class="word_category_letters">
+            <div class="predicted_winnings" data-predicted-winnings></div>
+            <div class="center_wrapper">
+                <div class="word" data-word></div>
+                <div class="category" data-category></div>
+                <div class="letters" data-letters></div>
+            </div>
+            <div class="clock">
+                <div class="seconds_container" data-seconds-container>
+                    <div class="seconds"></div>
+                </div>
+            </div>
+        </section>
+        <section class="button_continueGame_endGame">
+            <button data-button-continue-playing>Graj dalej</button>
+            <button data-button-end-game>Koniec gry</button>
+        </section>
+    </div>
+    <footer class="footer"></footer>
+
+    <script src="./js/Game.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+:root {
+    --numbers-seconds-easy: 60s;
+    --number-seconds-medium: 50s;
+    --number-seconds-difficult: 40s;
+    --border-button: 5px;
+
+    --button-border-color: rgb(48, 40, 40);
+    --button-color: rgb(214, 207, 105);
+    --button-hover-color: rgb(95, 77, 77);
+
+    --background-color-header-footer: rgb(214, 195, 233);
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 'Bitter', sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    background-color: var(--background-color-header-footer);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.reset {
+    position: fixed;
+    margin-left: 80vw;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.reset button {
+    border: 3px solid var(--button-border-color);
+    height: 34px;
+    width: 150px;
+    font-size: 20px;
+    background-color: var(--button-color);
+    cursor: pointer;
+}
+
+.wrapper_start {
+    width: 85%;
+    margin: 15vh auto 0;
+    padding: 30px 100px;
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+
+}
+
+.footer {
+    position: fixed;
+    width: 100vW;
+    height: 40px;
+    background-color: var(--background-color-header-footer);
+    bottom: 0px;
+}
+
+.wrapper_start p {
+    font-size: 20px;
+    margin: 10px auto 0;
+}
+
+#money,
+.level {
+    width: 200px;
+    height: 30px;
+    margin: 10px auto 0;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid var(--button-border-color);
+}
+
+.level {
+    margin-bottom: 20px;
+}
+
+.button_deposit,
+.button_play {
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    margin: 10px auto 0;
+    cursor: pointer;
+    border: var(--border-button) solid var(--button-border-color);
+    background-color: var(--button-color);
+}
+
+.button_deposit {
+    margin-bottom: 20px;
+}
+
+.button_play {
+    width: 250px;
+    height: 60px;
+}
+
+.reset button:hover,
+.button_continueGame_endGame button:hover,
+#money:hover,
+.level:hover,
+.button_play:hover,
+.button_deposit:hover {
+    box-shadow: 0px 0px 5px 5px var(--button-hover-color);
+}
+
+.wrapper_game {
+    width: 85%;
+    margin: 15vh auto 0;
+
+}
+
+.win_life_time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.life {
+    display: flex;
+    width: 500px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.step {
+    width: calc(600 / 8);
+    opacity: 0.1;
+    border-right: 3px #fff solid;
+}
+
+.life .step img {
+    width: 100%;
+}
+
+.predicted_winnings,
+.clock,
+.time,
+.win {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.time,
+.win {
+    flex-direction: column;
+    text-align: center;
+}
+
+.win div {
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.timer {
+    color: black;
+    font-size: 75px;
+}
+
+.button_continueGame_endGame {
+    text-align: center;
+    padding-top: 30px;
+}
+
+section button {
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px 20px;
+    border: var(--border-button) solid var(--button-border-color);
+    background-color: var(--button-color);
+}
+
+.word_category_letters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px auto 0;
+    min-height: 280px;
+}
+
+.center_wrapper {
+    width: 600px;
+}
+
+.clock {
+    background: #fff url(/images/ios_clock.svg) no-repeat;
+    position: relative;
+    height: 150px;
+}
+
+.seconds_container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation-play-state: running;
+}
+
+.seconds_container_easy {
+    animation: rotate var(--numbers-seconds-easy) linear;
+}
+
+.seconds_container_medium {
+    animation: rotate var(--number-seconds-medium) linear;
+}
+
+.seconds_container_difficult {
+    animation: rotate var(--number-seconds-difficult) linear;
+}
+
+.animation_stop {
+    animation-play-state: paused;
+}
+
+.seconds {
+    background: #000;
+    height: 40%;
+    left: 49.5%;
+    position: absolute;
+    top: 14%;
+    transform-origin: 50% 80%;
+    width: 2px;
+    z-index: 8;
+}
+
+.predicted_winnings {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.predicted_winnings div {
+    margin-bottom: 15px;
+}
+
+.word {
+    letter-spacing: 5px;
+    font-size: 2rem;
+    padding: 30px 20px;
+    border: 3px black solid;
+    text-align: center;
+    box-shadow: 0px 0px 5px 5px var(--button-hover-color);
+}
+
+.letters {
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.letters button {
+    width: 35px;
+    height: 35px;
+    font-size: 10px;
+    padding: 10px;
+    margin: 4px;
+    background-color: var(--button-color);
+    border: 3px solid var(--button-border-color);
+    text-align: center;
+}
+
+.category {
+    text-align: center;
+    padding: 30px 0px;
+    text-transform: uppercase;
+}
+
+.game_hide {
+    display: none;
+}
+
+.style_red1 div:nth-child(1) {
+    color: green;
+    font-size: 35px;
+}
+
+.style_red2 div:nth-child(2) {
+    color: green;
+    font-size: 35px;
+}
+
+.style_red3 div:nth-child(3) {
+    color: green;
+    font-size: 35px;
+}
+
+.style_red4 div:nth-child(4) {
+    color: green;
+    font-size: 35px;
+}
+
+.style_red5 div:nth-child(5) {
+    color: green;
+    font-size: 35px;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
